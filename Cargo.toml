@@ -1,0 +1,29 @@
+[package]
+authors = ["Mathias Gottschlag <mgottschlag@gmail.com>"]
+description = "STM32F4 blink example in Rust"
+keywords = ["arm", "cortex-m"]
+license = "MIT OR Apache-2.0"
+name = "rust-stm32f4-blinky"
+version = "0.0.1"
+
+[dependencies]
+stm32f429 = { git = "https://github.com/mgottschlag/stm32f429.git" }
+
+[dependencies.cast]
+default-features = false
+version = "0.2.2"
+
+[dependencies.cortex-m]
+version = "0.3.0"
+
+[dependencies.cortex-m-rt]
+features = ["abort-on-panic"]
+version = "0.3.3"
+
+[dependencies.cortex-m-semihosting]
+version = "0.2.0"
+
+[profile]
+[profile.release]
+debug = true
+lto = true
